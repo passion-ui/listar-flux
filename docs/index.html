@@ -1,0 +1,701 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Listar Flux - mobile directory listing app template for Flutter</title>
+
+	<meta name="description" content="A Perfect HTML5 Template for your site with unlimited options">
+	<meta name="author" content="vor">
+	<meta name="copyright" content="vor">
+	<meta name="generator" content="Documenter v1.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-01-05T00:00:00+02:00">
+
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link type="text/css" rel="stylesheet" href="assets/css/SyntaxHighlighter.css">
+	</link>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,800'
+		rel='stylesheet' type='text/css'>
+	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+
+	<script>document.createElement('section'); var duration = '500', easing = 'swing';</script>
+	<script src="assets/js/script.js"></script>
+
+	<style>
+		html {
+			background-color: #EEEEEE;
+			color: #383838;
+		}
+
+		::-moz-selection {
+			background: #333636;
+			color: #00DFFC;
+		}
+
+		::selection {
+			background: #333636;
+			color: #00DFFC;
+		}
+
+		#documenter_sidebar #documenter_logo {
+			background-image: url();
+		}
+
+		a {
+			color: #008C9E;
+		}
+
+		.btn {
+			border-radius: 3px;
+		}
+
+		.btn-primary {
+			background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			background-image: -o-linear-gradient(top, #008C9E, #006673);
+			background-image: linear-gradient(top, #008C9E, #006673);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			border-color: #006673 #006673 #bfbfbf;
+			color: #FFFFFF;
+		}
+
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+			border-color: #008C9E #008C9E #bfbfbf;
+			background-color: #006673;
+		}
+
+		hr {
+			border-top: 1px solid #D4D4D4;
+			border-bottom: 1px solid #FFFFFF;
+		}
+
+		#documenter_sidebar,
+		#documenter_sidebar ul a {
+			background-color: #343838;
+			color: #FFFFFF;
+		}
+
+		#documenter_sidebar ul a {
+			-webkit-text-shadow: 1px 1px 0px #494F4F;
+			-moz-text-shadow: 1px 1px 0px #494F4F;
+			text-shadow: 1px 1px 0px #494F4F;
+		}
+
+		#documenter_sidebar ul {
+			border-top: 1px solid #212424;
+		}
+
+		#documenter_sidebar ul a {
+			border-top: 1px solid #494F4F;
+			border-bottom: 1px solid #212424;
+			color: #FFFFFF;
+		}
+
+		#documenter_sidebar ul a:hover {
+			background: #333636;
+			color: #00DFFC;
+			border-top: 1px solid #333636;
+		}
+
+		#documenter_sidebar ul a.current {
+			background: #333636;
+			color: #00DFFC;
+			border-top: 1px solid #333636;
+		}
+
+		#documenter_copyright {
+			display: block !important;
+			visibility: visible !important;
+		}
+
+		#documenter_sidebar,
+		#documenter_sidebar ul a {
+			background-color: #000;
+			color: #FFF;
+		}
+
+		#documenter_sidebar #documenter_logo {
+			margin: 50px 40px 0;
+			position: relative;
+		}
+
+		#documenter_sidebar #documenter_logo:hover {
+			text-decoration: none;
+		}
+
+		#documenter_sidebar #documenter_logo img {
+			position: absolute;
+			margin-top: 5px;
+		}
+
+		#documenter_sidebar #documenter_logo div.infor {
+			margin-left: 45px;
+		}
+
+		#documenter_sidebar #documenter_logo div.infor span {
+			display: inline;
+		}
+
+		#documenter_sidebar #documenter_logo div.infor .title {
+			font-size: 22px;
+			color: white;
+		}
+
+		#documenter_sidebar #documenter_logo div.infor .sub-title {
+			font-size: 14px;
+			color: white;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo">
+			<img src="assets/img/logo.png" alt="" />
+			<div class="infor">
+				<span class="title">
+					Listar Flux <br />
+				</span>
+				<span class="sub-title">
+					Version 1.1.4
+				</span>
+			</div>
+		</a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#welcome">Welcome</a></li>
+			<li><a class="current" href="#getting-started">Getting Start</a></li>
+			<li><a href="#source-structure">Source Structure</a></li>
+			<li><a href="#theming">Theming</a></li>
+			<li><a href="#language">Language</a></li>
+			<li><a href="#customize">App Name & Icon</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<li><a href="#troubleshooting">Troubleshooting</a></li>
+			<li><a href="#sources_and_credits" title="Sources and Credits">Sources and Credits</a></li>
+		</ul>
+		<div id="documenter_copyright">Copyright Moonart 2015<br>
+			made with the <a href="http://rxa.li/documenter">Documenter v1.0</a>
+		</div>
+	</div>
+	<div id="documenter_content">
+		<section id="welcome">
+			<h1>Listar Flux</h1>
+			<h2>Mobile directory listing app template for Flutter</h2>
+			<p>
+				<img src="assets/img/banner.png" alt="" style="max-width: 590px;" />
+			</p>
+			<h4><strong>Welcome To Listar Flux - Mobile directory listing app template documentation.</strong>
+			</h4>
+			<p>Firstly, a huge thanks for purchasing this template, your support is truly appreciated!</p>
+			<p>
+				This document covers the installation and use of this template and often reveals answers to common
+				problems
+				and issues - read this document thoroughly if you are experiencing any difficulties.
+			</p>
+			<p>
+				If you have any questions that are beyond the scope of this document, feel free to pose them in the
+				dedicated <a href="https://codecanyon.net/user/passionui" target="_blank">support section.</a>
+			</p>
+
+			<h4><strong>Screens</strong></h4>
+			<ul class="list">
+				<li>Home screen</li>
+				<li>Category (block/list)</li>
+				<li>Directory listing with flexible (block/list/grid)</li>
+				<li>Directory listing map view</li>
+				<li>Simple/advance filtering</li>
+				<li>Modern sorting</li>
+				<li>Wishlist</li>
+				<li>Account settings</li>
+				<li>Sign in</li>
+				<li>Sign up</li>
+				<li>Reset password</li>
+				<li>Reviews</li>
+				<li>Feedback</li>
+				<li>Notification message</li>
+				<li>Google map</li>
+				<li>... and more</li>
+			</ul>
+			<h4><strong>Features</strong></h4>
+			<ul class="list">
+				<li>UI/UX design from industry experts</li>
+				<li>25+ Different Screens</li>
+				<li>Dark mode (Optional)</li>
+				<li>Change setting color</li>
+				<li>Change setting font</li>
+				<li>Multiple langauge</li>
+				<li>Layout RTL support (Arabic Language)</li>
+				<li>Support Iphone, Iphone X, Ipad, Android multiple devices (32bit & 64bit)</li>
+				<li>Support landscape view mode</li>
+				<li>Using Flutter framework by Google</li>
+			</ul>
+			<h4><strong>Application Demo</strong></h4>
+			<p>Available download on App Store & Google Play</p>
+			<ul>
+				<li>Android: <a
+						href="https://play.google.com/store/apps/details?id=com.huynh.listar_flutter">https://play.google.com/store/apps/details?id=com.huynh.listar_flutter</a>
+					</a>
+				</li>
+
+				<li>IOS: <a
+						href="https://apps.apple.com/us/app/listar-flux/id1494632675">https://apps.apple.com/us/app/listar-flux/id1494632675</a>
+				</li>
+				<li>Account Test: <strong>test/123456</strong></li>
+			</ul>
+			<p>Go ahead to know more.</p>
+		</section>
+		<section id="getting-started">
+			<h3>Getting Start</h3>
+			<h4><strong>1. System Requirements</strong></h4>
+			<p>
+				Base on Flutter requirement. Please select the operating system on which you are installing Flutter:
+			</p>
+			<ul>
+				<li>Mac OS: <a
+						href="https://flutter.dev/docs/get-started/install/macos">https://flutter.dev/docs/get-started/install/macos</a>
+				</li>
+				<li>Window: <a
+						href="https://flutter.dev/docs/get-started/install/windows">https://flutter.dev/docs/get-started/install/windows</a>
+				</li>
+				<li>
+					Linux: <a
+						href="https://flutter.dev/docs/get-started/install/linux">https://flutter.dev/docs/get-started/install/linux</a>
+				</li>
+				<li>
+					Setup an editor: <a
+						href="https://flutter.dev/docs/get-started/editor">https://flutter.dev/docs/get-started/editor</a>
+				</li>
+			</ul>
+			<h4><strong>2. Installation</strong></h4>
+			<p>
+				After unzip the download package, you'll found a <strong><code>source</code></strong> folder with all
+				the
+				files. The main source code is here. Please see image below.
+			</p>
+			<img src="assets/img/source-code.png" alt="" width="400" />
+			<h5><strong>How to run Listar Flux with Android ?</strong></h5>
+			<p>
+				- First, Please using your <a href="https://developer.android.com/studio/">Android Studio</a> (3.5.3 or
+				last version)<br />
+				- Android SKD: Please check your Android Studio has installed last SDK. This installs the latest Android
+				SDK, Android SDK Platform-Tools, and Android SDK Build-Tools, which are required by Flutter when
+				developing for Android<br />
+				- Make sure you aldready <strong>Set up the Android emulator</strong> (<a
+					href="https://flutter.dev/docs/get-started/install/macos#set-up-the-android-emulator">https://flutter.dev/docs/get-started/install/macos#set-up-the-android-emulator</a>)
+			</p>
+			<p>
+				Open Android Studio > Open an existing Android Studio project > Select folder <code>./source</code>
+			</p>
+			<img src=" assets/img/android-setup.png" alt="" />
+			<ul>
+				<li>1. Set up the Android emulator if you haven't added emulator yet</li>
+				<li>2. Select > Packages Get</li>
+				<li>3. Select > Packages upgrade</li>
+				<li>4. Select > Flutter upgrade</li>
+				<li>5. Select simulator device for run</li>
+				<li>6. Select for run and wait for get the result</li>
+			</ul>
+
+			<h5><strong>How to run Listar Flux with Ios?</strong></h5>
+			<p>
+				Before you run Listar Flux project, please make sure you have followed the guideline for Ios <a
+					href="https://flutter.dev/docs/get-started/install/macos">https://flutter.dev/docs/get-started/install/macos</a>
+			</p>
+			<p>
+				Access to the folder <code>./source</code> (main source code) and run the command
+				<pre name="code" class="javascript">
+					open -a Simulator
+					flutter run
+				</pre>
+			</p>
+			<p>
+				After run these command above successful, the result will be like image below
+			</p>
+			<img src="assets/img/ios-setup.png" />
+		</section>
+		<section id="source-structure">
+			<div class="page-header">
+				<h3>Source Structure</h3>
+				<hr class="notop">
+			</div>
+			<img src=" assets/img/source-structure.png" alt="" />
+
+			<h4><strong>Config Files</strong></h4>
+			File locate: <code>./lib/configs/..</code>
+			<ul>
+				<li><code>image.dark</code>: all images use for the app</li>
+				<li><code>theme.dark</code>: define common FontFamily, FontWeight, Typography system</li>
+				<li><code>theme_collection.dark</code>: theme schema for application</li>
+			</ul>
+
+			<h4><strong>Widget</strong></h4>
+			File locate: <code>./lib/widgets/..</code>
+			<br /><br />
+			Contains all UI widget of application like: Button, Loading, Star Rating, Item, Card, Message ...
+
+			<h4><strong>Blocs</strong></h4>
+			Contains all Blocs pattern of the application
+
+			<h4><strong>Screens</strong></h4>
+			File locate: <code>./lib/screens/..</code>
+			<br /><br />
+			Contains all screens of the application
+			<br /><br />
+			All template design of the app are locate in here (<code>./lib/screens/..</code>). You could change or
+			re-structure by matching with your
+			own project structure design.
+
+			<h4><strong>Assets</strong></h4>
+			File locate: <code>./assets/..</code>
+			<p>
+				You can store images, fonts or other file resource in this folder
+			</p>
+			<h4><strong>Models</strong></h4>
+			File locate: <code>./lib/models/..</code>
+			<br /><br />
+			We defined data model for each screen, all data will be load through data model class
+			<h4><strong>Utils</strong></h4>
+			File locate: <code>./lib/utils/..</code>
+			<br /><br />
+			Contains all utils function like validate form, logger, switch mode theme, color ... It looks like helper
+			functions
+		</section>
+		<section id="theming">
+			<div class="page-header">
+				<h3>Theming</h3>
+				<hr class="notop">
+			</div>
+			<p>
+				First, please
+				refer more how to <a href="https://flutter.dev/docs/cookbook/design/themes">use themes to share colors
+					and
+					font
+					styles</a> from Flutter official docs
+			</p>
+			</p>
+			<h4><strong>Font Family</strong></h4>
+			The default font family name "Raleway" are being used for this template. If you need change or a custom font
+			to be the prettiest? You'll need the .ttf files for all supported styles (thin, ultraLight, light, regular,
+			medium, semibold, bold, heavy, black ...). Here are the few steps you need to add it.
+			<br /><br />
+			Add more font family in folder <code>./assets/fonts/..</code>
+			<br /><br />
+			Example: Download and add more font Roboto <a href="https://fonts.google.com/specimen/Roboto"
+				target="_blank" rel="noopener noreferrer">[download here]</a>
+			<br /><br />
+			<img class="alignnone wp-image-178 size-full" src="assets/img/2019-07-14_21-19-41.png" alt="" width="309"
+				height="590" />
+			<br /><br />
+
+			Open file <code>./lib/configs/theme.dart</code>
+			<br /><br />
+			<pre name="code" class="javascript">
+				static String currentFont = "Raleway";
+			</pre>
+
+			<h3>Color</h3>
+			<h4><strong>General</strong></h4>
+			The template are using color palette following format by image below
+			<br /><br />
+			<img class="alignnone wp-image-144" src="assets/img/Color-Palette.png" alt="" width="700" height="276" />
+			<br /><br />
+			You can change the theme prop dynamically and all the components will automatically update to reflect the
+			new theme.
+			Open file <code>./lib/configs/theme.dart</code>
+			<br /><br />
+
+			<pre name="code" class="javascript">
+				///Default Theme
+				static ThemeModel currentTheme = ThemeModel.fromJson({
+					"name": "Default",
+					"color": Color(0xffe5634d),
+					"light": "primaryLight",
+					"dart": "primaryDart",
+				});
+			</pre>
+
+			<p>
+				If you want change or modify color. Open file <code>./lib/configs/theme_collection.dart</code>
+			</p>
+			<p>
+				<img src="assets/img/color-pattern.png" />
+			</p>
+			<p>
+				If you want to customize colors or for matching with your business colors. Just refer more with websites
+				below for pickup right color palettes
+			</p>
+			<ul>
+				<li><a href="https://materialpalette.com" target="_blank"
+						rel="noopener noreferrer">https://materialpalette.com</a></li>
+				<li><a href="https://colorhunt.co" target="_blank" rel="noopener noreferrer">https://colorhunt.co</a>
+				</li>
+			</ul>
+			<h4><strong>Multiple Color</strong></h4>
+			<p>
+				The template application support multiple color. User enable to change other pattern color. 
+			</p>
+			<p>
+				First check define list color patterns are anable to selected. Open file <code>./lib/configs/theme.dart</code>
+			</p>
+			<pre name="code" class="javascript">
+				///List Theme Support in Application
+				static List themeSupport = [
+					{
+					"name": "default",
+					"color": Color(0xffe5634d),
+					"light": "primaryLight",
+					"dark": "primaryDark",
+					},
+					{
+					"name": "brown",
+					"color": Color(0xffa0877e),
+					"light": "brownLight",
+					"dark": "brownDark",
+					},
+					{
+					"name": "pink",
+					"color": Color(0xffe0a6c1),
+					"light": "pinkLight",
+					"dark": "pinkDark",
+					},
+					{
+					"name": "orange",
+					"color": Color(0xfff6bb41),`
+					"light": "pastelOrangeLight",
+					"dark": "pastelOrangeDark",
+					},
+					{
+					"name": "green",
+					"color": Color(0xff93b7b0),
+					"light": "greenLight",
+					"dark": "greenDark",
+					},
+				].map((item) => ThemeModel.fromJson(item)).toList();
+			</pre>
+			<p>
+				Then define more theme collection. Open file <code>./lib/configs/theme_collection.dark</code>
+			</p>
+			<img src="assets/img/color-02.png" style="max-width: 600px; float:left" />
+			<img src="assets/img/color-01.png" style="max-width: 600px" />
+		</section>
+		<section id="language">
+			<div class="page-header">
+				<h3>Language</h3>
+				<hr class="notop">
+			</div>
+			<p>
+				First, please check file <code>./lib/configs/language.dark</code> and define your list language support
+			</p>
+			<pre name="code" class="javascript">
+				import 'package:flutter/material.dart';
+					class AppLanguage {
+					///Default Language
+					static Locale defaultLanguage = Locale("en");
+
+					///List Language support in Application
+					static List<Locale> supportLanguage = [
+						Locale("en"),
+						Locale("vi"),
+						Locale("ar"),
+						Locale("zh"),
+						Locale("ko"),
+						Locale("ja")
+					];
+
+					///Singleton factory
+					static final AppLanguage _instance = AppLanguage._internal();
+
+					factory AppLanguage() {
+						return _instance;
+					}
+
+					AppLanguage._internal();
+					}
+			</pre>
+			<p>
+				Then define your json lanuage in folder following your list language <code>./assets/locale/..</code>
+			</p>
+			<img src="assets/img/language-02.png" style="max-width: 600px; float:left" />
+			<img src="assets/img/language-01.png" style="max-width: 600px;" />
+		</section>
+		<section id="customize">
+			<div class="page-header">
+				<h3>App Name & Icon</h3>
+				<hr class="notop">
+			</div>
+			<p>This project also allow change application name & icon</p>
+			<h5><strong>Change the app name</strong></h5>
+			<p>
+				<strong>IOS</strong><br />
+				Open file ./ios/Runner/Info.plist and replace the <strong>Listar Flux</strong> with your app branch
+				name.
+			</p>
+			<pre name="code" class="javascript">
+				<key>CFBundleName</key>
+				<string>Listar Flux</string>
+			</pre>
+			<p>
+				<strong>Android</strong><br />
+				Open file ./android/app/src/main/res/values/AndroidManifest.xml and replace <strong>Listar Flux</strong>
+				with
+				your app
+				branch name
+			</p>
+			<pre name="code" class="javascript">
+				<application android:label="Listar Flux" />
+			</pre>
+			<h5><strong>Change the app Bundle ID</strong></h5>
+			<p>
+				<strong>IOS</strong><br />
+				Using Xcode and open ios project then modify it
+			</p>
+			<img src="assets/img/ios-id.png" />
+			<p>
+				<strong>Android</strong><br />
+				Searching "com.huynh.listar_flutter" in folder ./android/... then modify it
+			</p>
+			<img src="assets/img/android-id.png" />
+			<h5><strong>Change the app Icon</strong></h5>
+			<p>
+				<strong>IOS</strong><br />
+				<img src="assets/img/icon-ios.png" width="1000" />
+			</p>
+			<p>
+				<strong>Android</strong><br />
+				<img src="assets/img/icon-android.png" width="1000" />
+			</p>
+			<h5><strong>Change GoogleMap Key</strong></h5>
+			<p>
+				First please check how to register GoogleMap key from <a href="https://developers.google.com/maps/documentation/embed/get-api-key">https://developers.google.com/maps/documentation/embed/get-api-key</a><br/>
+				Search in project exist GoogleMap key <strong>AIzaSyBRB5_8rkANX4dYFkqQ8hIDE60ELN4TCt8</strong><br/>
+				File locate<br/>
+				- Ios: ./source/ios/Runner/AppDelegate.swift<br/>
+				- Android: ./source/android/app/src/main/AndroidManifest.xml<br/>
+			</p>
+			<p>
+				<strong>Android</strong><br />
+				<img src="assets/img/map-android.png" style="max-width: 1080px;" />
+			</p>
+			<p>
+				<strong>IOS</strong><br />
+				<img src="assets/img/map-ios.png" style="max-width: 1080px;" />
+			</p>
+		</section>
+		<section id="faq">
+			<div class="page-header">
+				<h3>Faq</h3>
+				<hr class="notop">
+			</div>
+			<h5><strong>Dose it connect any API ?</strong></h5>
+			<p>No, It dose not. It just included template only. We do not connect any API. You have to develop by
+				yourself
+				for matching with your biz.</p>
+			<h5><strong>Dose it collection user information ?</strong></h5>
+			<p>No, It dose not. The mobile template application just simple application with UX/UX.</p>
+
+			<h5><strong>Can I release the app to both iOS and Android?</strong></h5>
+			<p>
+				Yes, this app is made by Flutter framework which support to release for both iOS and Android, please
+				discover more the framework from 
+				<ul>
+					<li>Android: <a
+							href="https://flutter.dev/docs/deployment/android">https://flutter.dev/docs/deployment/android</a>
+					</li>
+					<li>Ios: <a
+							href="https://flutter.dev/docs/deployment/ios">https://flutter.dev/docs/deployment/ios</a>
+					</li>
+				</ul>
+			</p>
+
+			<h5><strong>Will I get the free upgrade on next coming version ?</strong></h5>
+			<p>
+				Yes, you will get the free upgrade with more awesome features coming.
+				You
+				will get the notify email for new version update on stores.
+			</p>
+		</section>
+		<section id="troubleshooting">
+			<div class="page-header">
+				<h3>Troubleshooting</h3>
+				<hr class="notop">
+			</div>
+			<h5>Support Issue Channel on Github</h5>
+			<a href="https://github.com/passionui/support/issues" target="_blank"
+				rel="noopener noreferrer">github.com/passionui/support/issues</a>
+		</section>
+		<section id="sources_and_credits">
+			<div class="page-header">
+				<h3>Sources and Credits</h3>
+				<hr class="notop">
+			</div>
+			We based on <a href="https://flutter.dev/docs/get-started/install">Flutter Framework</a> for develop
+			template app.
+			<br /><br />
+			We have used the following plugins, fonts & images. All fonts, images, icons used in this template are free
+			for commercial use.
+			<h4>Resources</h4>
+			<ul>
+				<li>Image: <a href="http://unsplash.com">unsplash.com</a></li>
+				<li>Icon: <a href="https://material.io/resources/icons">material.io</a></li>
+				<li>Font: <a href="https://fonts.google.com/">fonts.google.com</a></li>
+			</ul>
+			<br /><br />
+			Once again, thank you so much for purchasing this theme.
+			<br /><br />
+			As I said at the beginning, We'd be glad to help you if you have any questions relating to this theme.
+			<br /><br />
+			I'll do our best to assist.
+			<br /><br />
+			<h4><strong>Rate for us</strong></h4>
+			<p>
+				Don't forget rate for us via
+				<a href="https://codecanyon.net/downloads">https://codecanyon.net/downloads</a>
+			</p>
+			Thanks
+		</section>
+	</div>
+	<script language="javascript" src="assets/js/shCore.js"></script>
+	<script language="javascript" src="assets/js/shBrushCss.js"></script>
+	<script language="javascript" src="assets/js/shBrushXml.js"></script>
+	<script language="javascript" src="assets/js/shBrushJScript.js"></script>
+
+	<style type="text/css" media="screen">
+		p,
+		table,
+		hr,
+		.box {
+			padding-bottom: 15px;
+		}
+
+		.box p {
+			margin-bottom: 10px;
+		}
+
+		pre,
+		code {
+			font-size: 14px;
+			margin: 1.5em 0;
+			white-space: pre;
+		}
+	</style>
+
+
+</body>
+
+</html>
